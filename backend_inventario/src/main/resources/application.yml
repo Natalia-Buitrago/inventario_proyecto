@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: inventory_db
+  application:
+    name: inventory-api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    com.inventory.api: DEBUG
+    org.springframework.data.mongodb: DEBUG
